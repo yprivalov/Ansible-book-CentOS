@@ -6,6 +6,3 @@
       yum: 
         name: nano
         state: latest
-
-    - name: Enable hilight in nano
-      lineinfile: dest=/tmp/ans insertafter="^bar" line="foo"
