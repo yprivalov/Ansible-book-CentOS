@@ -6,3 +6,13 @@
       yum: 
         name: nano
         state: latest
+
+    - name: Copy Highlighting Files
+      copy: src=files/nano/*.nanorc dest=/usr/share/nano/
+
+    - name: Enable Highlighting
+      lineinfile: 
+        path: /etc/nanorc
+        #regexp: '^# bind kdel backspace all'
+        insertafter: '^# bind kdel backspace all'
+        line: 'include /usr/share/nano/*'
